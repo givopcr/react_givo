@@ -1,0 +1,182 @@
+/* src/App.css */
+:root {
+  --bg-gradient: linear-gradient(135deg, #e0f2fe, #dbeafe);
+  --text-color: #1e293b;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(255, 255, 255, 0.4);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --accent-gradient: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+[data-theme="dark"] {
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --text-color: #e2e8f0;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(148, 163, 184, 0.3);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --accent-gradient: linear-gradient(90deg, #6366f1, #a78bfa);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: inherit;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.logo-container {
+  display: flex;
+  gap: 5rem;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  width: 6.5rem;
+  height: 6.5rem;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.logo:hover {
+  transform: scale(1.12);
+}
+
+.logo.react:hover {
+  animation: gentle-spin 15s linear infinite;
+}
+
+@keyframes gentle-spin {
+  to { transform: rotate(360deg) scale(1.12); }
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: gradient-shift 12s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  padding: 2.8rem 2rem;
+  border-radius: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem 2.8rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.25);
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin: 0.8rem 0;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* Responsif sederhana */
+@media (max-width: 600px) {
+  .logo-container { gap: 3rem; }
+  .logo { width: 5rem; height: 5rem; }
+  h1 { font-size: clamp(2.5rem, 9vw, 4rem); }
+}
