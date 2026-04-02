@@ -1,47 +1,247 @@
-/* Styling untuk keseluruhan halaman */
+/* Styling untuk keseluruhan halaman - Futuristik Theme */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 100%);
+    color: #e0e0ff;
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Container utama */
+/* Efek grid futuristik di background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Container utama dengan efek glass morphism dan neon */
 .card {
     max-width: 600px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    background: rgba(10, 20, 40, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.2),
+        0 0 40px rgba(0, 255, 255, 0.1),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: float 6s ease-in-out infinite;
 }
 
-/* Header utama */
+/* Efek border berkilau */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: borderGlow 3s linear infinite;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Animasi floating */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Header utama dengan efek neon */
 h1 {
-    color: #007bff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    color: #fff;
     text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff,
+        0 0 80px #00ffff;
+    animation: pulse 2s ease-in-out infinite;
 }
 
-/* Paragraf */
+/* Animasi pulse untuk text */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Paragraf dengan efek futuristik */
 p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #b0b0ff;
+    text-align: justify;
+    padding: 10px;
+    border-left: 3px solid #00ffff;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), transparent);
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    transition: all 0.3s ease;
 }
 
-/* Garis pemisah */
+p:hover {
+    border-left-width: 6px;
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.2), transparent);
+    transform: translateX(5px);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* Garis pemisah dengan efek cyber */
 hr {
     border: none;
     height: 2px;
-    background: #ddd;
-    margin: 10px 0;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #00ffff, 
+        #ff00ff, 
+        #00ffff, 
+        transparent);
+    margin: 30px 0;
+    position: relative;
+    overflow: visible;
 }
 
-/* Greeting */
+hr::before,
+hr::after {
+    content: '⚡';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+    font-size: 14px;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+hr::before {
+    left: 0;
+}
+
+hr::after {
+    right: 0;
+}
+
+/* Greeting dengan efek glitch */
 small {
     display: block;
-    font-style: italic;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
     text-align: center;
-    color: #888;
-    margin-top: 5px;
+    color: #fff;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    position: relative;
+    animation: glitch 3s infinite;
+}
+
+/* Efek glitch untuk greeting */
+@keyframes glitch {
+    0%, 100% { text-shadow: 0 0 5px #00ffff; }
+    33% { text-shadow: -2px 0 #ff00ff, 2px 2px #00ffff; }
+    66% { text-shadow: 2px -2px #00ffff, -2px 0 #ff00ff; }
+}
+
+small::before,
+small::after {
+    content: attr(class);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.8;
+}
+
+small::before {
+    animation: glitch-top 1s infinite linear;
+    color: #ff00ff;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+small::after {
+    animation: glitch-bottom 1.5s infinite linear;
+    color: #00ffff;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-top {
+    2%, 64% { transform: translate(2px, -2px); }
+    4%, 60% { transform: translate(-2px, 2px); }
+    62% { transform: translate(0, 0); }
+}
+
+@keyframes glitch-bottom {
+    2%, 64% { transform: translate(-2px, 2px); }
+    4%, 60% { transform: translate(2px, -2px); }
+    62% { transform: translate(0, 0); }
+}
+
+/* Efek partikel bergerak */
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    animation: moveParticle 8s ease-in-out infinite;
+}
+
+@keyframes moveParticle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes borderGlow {
+    0%, 100% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(90deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
 }
