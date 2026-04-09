@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "React",
+    "type": "Frontend",
+    "description": "Library JavaScript untuk membangun UI yang interaktif."
+  },
+  {
+    "id": 2,
+    "name": "Vue",
+    "type": "Frontend",
+    "description": "Framework JavaScript yang progresif dan mudah dipelajari."
+  },
+  {
+    "id": 3,
+    "name": "Angular",
+    "type": "Frontend",
+    "description": "Platform dan framework untuk membangun aplikasi SPA yang kompleks."
+  },
+  {
+    "id": 4,
+    "name": "Express",
+    "type": "Backend",
+    "description": "Framework web yang cepat, minimalis, dan fleksibel untuk Node.js."
+  },
+  {
+    "id": 5,
+    "name": "Laravel",
+    "type": "Backend",
+    "description": "Framework PHP dengan sintaks elegan dan ekspresif."
+  },
+  {
+    "id": 6,
+    "name": "Tailwind CSS",
+    "type": "Styling",
+    "description": "Framework CSS utility-first untuk desain kustom yang cepat."
+  }
+]
