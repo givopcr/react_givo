@@ -1,0 +1,385 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.32), transparent 28%),
+    radial-gradient(circle at right, rgba(45, 212, 191, 0.18), transparent 24%),
+    linear-gradient(135deg, #06111f, #0f1b32 42%, #152545);
+  color: #eff6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-noise {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.28));
+  pointer-events: none;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+  width: min(1160px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+.card {
+  background: rgba(9, 20, 40, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+  border-radius: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+  color: #7dd3fc;
+}
+
+.brand,
+.section-heading h2,
+.hero h2,
+.portfolio-content h3,
+.contact h2 {
+  margin: 0;
+}
+
+.nav-shell {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.brand {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  color: #cbd5e1;
+}
+
+.nav-links a {
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(125, 211, 252, 0.12);
+  color: #f8fafc;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.hero-copy h2 {
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 1.02;
+  max-width: 12ch;
+}
+
+.hero-copy p,
+.hero-panel li,
+.metric-card p,
+.service-card p,
+.workflow-card p,
+.portfolio-content p,
+.testimonial .quote,
+.faq-item p,
+.contact p {
+  color: #cbd5e1;
+}
+
+.pill,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.95rem 1.35rem;
+  border-radius: 16px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover,
+.tab:hover,
+.faq-trigger:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(148, 163, 184, 0.14);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hero-panel {
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(14, 165, 233, 0.12), rgba(99, 102, 241, 0.06));
+}
+
+.bullet-list {
+  padding-left: 1.1rem;
+  margin: 1rem 0 0;
+}
+
+.metric-grid,
+.service-grid,
+.workflow-grid,
+.dual-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 1.5rem 0 2.5rem;
+}
+
+.metric-card,
+.service-card,
+.workflow-card,
+.testimonial {
+  padding: 1.5rem;
+}
+
+.metric-card strong {
+  display: inline-block;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-block {
+  margin-top: 2.5rem;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.18), rgba(59, 130, 246, 0.18));
+  color: #bfdbfe;
+  font-weight: 700;
+}
+
+.workflow-shell {
+  padding: 2rem;
+}
+
+.workflow-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.workflow-card span {
+  color: #7dd3fc;
+  font-size: 0.9rem;
+}
+
+.portfolio {
+  padding: 1.5rem;
+}
+
+.tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tab,
+.faq-trigger {
+  background: rgba(148, 163, 184, 0.12);
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.tab {
+  padding: 0.8rem 1rem;
+  border-radius: 14px;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #22c55e, #0ea5e9);
+  color: white;
+}
+
+.portfolio-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 22rem;
+}
+
+.dual-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.testimonial span {
+  color: #7dd3fc;
+}
+
+.faq-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-item {
+  padding: 1rem 1.2rem;
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.contact-box {
+  padding: 1.25rem;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(125, 211, 252, 0.16);
+}
+
+.footer-note {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  color: #94a3b8;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .metric-grid,
+  .service-grid,
+  .workflow-grid,
+  .dual-grid,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-content,
+  .nav-shell {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-content {
+    width: min(100% - 1rem, 100%);
+  }
+
+  .hero,
+  .workflow-shell,
+  .contact,
+  .portfolio,
+  .metric-card,
+  .service-card,
+  .workflow-card,
+  .testimonial {
+    padding: 1.25rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+}
