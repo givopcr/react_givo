@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 
@@ -31,21 +30,18 @@ function App() {
   );
 }
 
-// Komponen kecil untuk logos
+// Komponen Logos (FIX: hapus reactLogo)
 function Logos() {
   return (
     <div className="logo-container">
       <a href="https://vite.dev" target="_blank" rel="noreferrer">
         <img src={viteLogo} className="logo" alt="Vite logo" />
       </a>
-      <a href="https://react.dev" target="_blank" rel="noreferrer">
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </a>
     </div>
   );
 }
 
-// Komponen utama card
+// Komponen Card
 function MainCard({ count, setCount }) {
   return (
     <div className="card">
@@ -56,13 +52,13 @@ function MainCard({ count, setCount }) {
         Edit <code>src/App.jsx</code> and save to test HMR
       </p>
       <p>
-        Click on the Vite and React logos to learn more
+        Click on the Vite logo to learn more
       </p>
     </div>
   );
 }
 
-// Footer sederhana
+// Footer
 function Footer() {
   return (
     <footer>
