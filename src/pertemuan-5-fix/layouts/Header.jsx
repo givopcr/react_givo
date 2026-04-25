@@ -11,7 +11,7 @@ export default function Header() {
                 <input
                     id="search-input"
                     type="text"
-                    placeholder="Search Here..."
+                    placeholder="Search coffee orders, customers, menu..."
                     className="border border-gray-100 p-2 pr-10 bg-white w-full max-w-lg rounded-md outline-none"
                 />
                 <FaSearch id="search-icon" className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-300" />
@@ -20,14 +20,14 @@ export default function Header() {
             {/* Icons */}
             <div id="icons-container" className="flex items-center space-x-4">
 
-                <div id="notification-icon" className="relative p-3 bg-blue-100 rounded-2xl text-blue-500 cursor-pointer">
+                <div id="notification-icon" className="relative p-3 bg-amber-100 rounded-2xl text-hijau cursor-pointer">
                     <FaBell />
-                    <span id="notification-badge" className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-blue-200 rounded-full px-2 py-1 text-xs">
-                        50
+                    <span id="notification-badge" className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-amber-200 rounded-full px-2 py-1 text-xs">
+                        12
                     </span>
                 </div>
 
-                <div id="chart-icon" className="p-3 bg-blue-100 rounded-2xl cursor-pointer">
+                <div id="chart-icon" className="p-3 bg-amber-100 rounded-2xl cursor-pointer">
                     <FcAreaChart />
                 </div>
 
@@ -37,7 +37,7 @@ export default function Header() {
 
                 <div id="profile-container" className="flex items-center space-x-4 border-l pl-4 border-gray-300">
                     <span id="profile-text">
-                        Hello, <b>Fikri Muhaffizh</b>
+                        Hello, <b>Givo Fadlillah</b>
                     </span>
                     <img
                         id="profile-avatar"

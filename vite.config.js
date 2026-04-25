@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         pertemuan4: resolve(__dirname, "pertemuan-4.html"),
         pertemuan5: resolve(__dirname, "pertemuan-5.html"),
+        pertemuan5fix: resolve(__dirname, "pertemuan-5-fix.html"),
       },
     },
   },
